@@ -1,0 +1,62 @@
+﻿@{
+    var title = ViewData["Title"] as string ?? "MuseumTickets";
+}
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title — MuseumTickets</title>
+
+    <!-- Bootstrap 5 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+            <div class="container">
+                <a class="navbar-brand fw-semibold" href="/">
+                    <i class="bi bi-museum me-2"></i>MuseumTickets
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#appNav"
+                        aria-controls="appNav" aria-expanded="false" aria-label="Navigacija">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="appNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/Muzeji"><i class="bi bi-building me-1"></i>Muzeji</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Izlozbe"><i class="bi bi-easel2 me-1"></i>Izložbe</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/TipoviKarata"><i class="bi bi-ticket-perforated me-1"></i>Tipovi karata</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Porudzbine"><i class="bi bi-bag-check me-1"></i>Porudžbine</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="app-footer mt-auto">
+        <div class="container d-flex justify-content-between flex-wrap gap-2">
+            <div class="text-muted small">© @DateTime.Now.Year MuseumTickets</div>
+            <div class="text-muted small">Projekat za kurs — .NET Core API + Razor Pages</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

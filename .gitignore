@@ -1,0 +1,131 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Build output
+bin/
+obj/
+**/bin/
+**/obj/
+
+# .NET publish output
+publish/
+out/
+
+# NuGet packages
+*.nupkg
+**/packages/
+packages/
+*.snupkg
+.project.lock.json
+project.lock.json
+
+# Azure / local.settings
+local.settings.json
+azure-pipelines.yml
+
+# User secrets (do not commit)
+secrets.json
+secrets.*
+*.SecretManager
+
+# DotNet ephemeral & tooling
+*.dotCover
+*.ncrunch*
+*.vsix
+.vscode-test/
+
+# Rider caches
+.idea/
+*.iml
+
+# Test results, coverage, Playwright, Playwright artifacts
+TestResults/
+TestResults/*
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+*.trx
+*.result.xml
+*.xml
+playwright-report/
+.playwright/
+**/.playwright/
+**/TestResults/
+**/coverage/
+
+# Playwright Node deps & packages
+node_modules/
+**/node_modules/
+
+# npm / pnpm / yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+.pnpm-store
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE / OS temp files
+*.DS_Store
+*.Thumbs.db
+ehthumbs.db
+Desktop.ini
+.vagrant/
+*.swp
+*~.nib
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Rider caches / IDE helpers
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Deployment / publish artifacts
+*.publishsettings
+*.deploy
+
+# Static web / frontend build output (if present)
+wwwroot/dist/
+wwwroot/build/
+dist/
+build/
+public/build/
+
+# Generated files from Visual Studio tooling
+*.userprefs
+*.sln.ide
+
+# Misc
+.env
+.env.local
+.env.*.local
+

@@ -1,0 +1,31 @@
+﻿@page "/Izlozbe/Detalji/{id:int}"
+@model MuseumTickets.Web.Pages.Exhibitions.DetailsModel
+@{
+    ViewData["Title"] = "Detalji izložbe";
+}
+
+<h1>Detalji izložbe</h1>
+
+@if (!string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+else if (Model.Item is not null)
+{
+    <table class="table table-bordered w-auto">
+        <tr><th>Šifra</th><td>@Model.Item.Id</td></tr>
+        <tr><th>Naziv</th><td>@Model.Item.Title</td></tr>
+        <tr><th>Datum početka</th><td>@Model.Item.StartDate.ToString("D")</td></tr>
+        <tr><th>Datum završetka</th><td>@(Model.Item.EndDate.HasValue ? Model.Item.EndDate.Value.ToString("D") : "—")</td></tr>
+        <tr><th>Muzej</th><td>@Model.Item.MuseumId</td></tr>
+        <tr><th>Opis</th><td>@Model.Item.Description</td></tr>
+    </table>
+
+    <a class="btn btn-secondary" asp-page="Index">Nazad</a>
+    <a class="btn btn-primary ms-2" asp-page="Edit" asp-route-id="@Model.Item.Id">Izmeni</a>
+    <a class="btn btn-danger ms-2" asp-page="Delete" asp-route-id="@Model.Item.Id">Obriši</a>
+}
+else
+{
+    <div class="alert alert-warning">Nije pronađeno.</div>
+}

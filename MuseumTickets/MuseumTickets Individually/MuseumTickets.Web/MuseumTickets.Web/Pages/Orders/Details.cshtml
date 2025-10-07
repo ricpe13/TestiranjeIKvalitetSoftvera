@@ -1,0 +1,32 @@
+﻿@page "/Porudzbine/Detalji/{id:int}"
+@model MuseumTickets.Web.Pages.Orders.DetailsModel
+@{
+    ViewData["Title"] = "Detalji porudžbine";
+}
+
+<h1>Detalji porudžbine</h1>
+
+@if (!string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+else if (Model.Item is not null)
+{
+    <table class="table table-bordered w-auto">
+        <tr><th>Šifra</th><td>@Model.Item.Id</td></tr>
+        <tr><th>Kupac</th><td>@Model.Item.BuyerName</td></tr>
+        <tr><th>Email</th><td>@Model.Item.BuyerEmail</td></tr>
+        <tr><th>Količina</th><td>@Model.Item.Quantity</td></tr>
+        <tr><th>Tip karte</th><td>@Model.TicketTypeName</td></tr>
+        <tr><th>Izložba</th><td>@Model.ExhibitionTitle</td></tr>
+        <tr><th>Poručeno</th><td>@Model.Item.OrderedAt.ToString("f")</td></tr>
+    </table>
+
+    <a class="btn btn-secondary" asp-page="Index">Nazad</a>
+    <a class="btn btn-primary ms-2" asp-page="Edit" asp-route-id="@Model.Item.Id">Izmeni</a>
+    <a class="btn btn-danger ms-2" asp-page="Delete" asp-route-id="@Model.Item.Id">Obriši</a>
+}
+else
+{
+    <div class="alert alert-warning">Nije pronađeno.</div>
+}

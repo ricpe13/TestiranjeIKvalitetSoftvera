@@ -1,0 +1,51 @@
+﻿@page "/TipoviKarata"
+@model MuseumTickets.Web.Pages.TicketTypes.IndexModel
+@{
+    ViewData["Title"] = "Tipovi karata";
+}
+
+<h1 class="mb-3">Tipovi karata</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">+ Kreiraj</a>
+</p>
+
+@if (!string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div class="alert alert-danger">@Model.Error</div>
+}
+
+@if (Model.Items is { Count: > 0 })
+{
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Šifra</th>
+                <th>Naziv</th>
+                <th>Cena</th>
+                <th>Muzej</th>
+                <th style="width:220px">Akcije</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in Model.Items)
+            {
+                <tr>
+                    <td>@t.Id</td>
+                    <td>@t.Name</td>
+                    <td>@t.Price</td>
+                    <td>@t.MuseumId</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-secondary" asp-page="Details" asp-route-id="@t.Id">Detalji</a>
+                        <a class="btn btn-sm btn-outline-primary ms-1" asp-page="Edit" asp-route-id="@t.Id">Izmeni</a>
+                        <a class="btn btn-sm btn-outline-danger ms-1" asp-page="Delete" asp-route-id="@t.Id">Obriši</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (string.IsNullOrWhiteSpace(Model.Error))
+{
+    <div class="alert alert-info">Još uvek nema tipova karata.</div>
+}

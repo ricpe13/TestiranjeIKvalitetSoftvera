@@ -1,0 +1,65 @@
+﻿@page
+@{
+    ViewData["Title"] = "Početna";
+}
+<div class="hero mb-4">
+    <h1 class="mb-2">MuseumTickets</h1>
+    <p class="mb-0 text-secondary">
+        Upravljajte muzejima, izložbama, tipovima karata i porudžbinama preko jasnog i brzog interfejsa.
+    </p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 quick-links">
+    <div class="col">
+        <a class="text-decoration-none" href="/Muzeji">
+            <div class="card h-100 p-3">
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-building"></i>
+                    <div>
+                        <div class="fw-semibold text-dark">Muzeji</div>
+                        <div class="text-secondary small">Lista, kreiranje, izmena, brisanje</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a class="text-decoration-none" href="/Izlozbe">
+            <div class="card h-100 p-3">
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-easel2"></i>
+                    <div>
+                        <div class="fw-semibold text-dark">Izložbe</div>
+                        <div class="text-secondary small">Planiranje i upravljanje</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a class="text-decoration-none" href="/TipoviKarata">
+            <div class="card h-100 p-3">
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-ticket-perforated"></i>
+                    <div>
+                        <div class="fw-semibold text-dark">Tipovi karata</div>
+                        <div class="text-secondary small">Cene i dostupnost</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a class="text-decoration-none" href="/Porudzbine">
+            <div class="card h-100 p-3">
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-bag-check"></i>
+                    <div>
+                        <div class="fw-semibold text-dark">Porudžbine</div>
+                        <div class="text-secondary small">Kupci i naručene karte</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

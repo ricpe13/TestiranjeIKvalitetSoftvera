@@ -1,0 +1,45 @@
+﻿@page "/TipoviKarata/Kreiraj"
+@model MuseumTickets.Web.Pages.TicketTypes.CreateModel
+@{
+    ViewData["Title"] = "Kreiraj tip karte";
+}
+
+<h1>Kreiraj tip karte</h1>
+
+<form method="post" class="mt-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Name" class="form-label"></label>
+        <input asp-for="Input.Name" class="form-control" />
+        <span asp-validation-for="Input.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Price" class="form-label"></label>
+        <input asp-for="Input.Price" class="form-control" />
+        <span asp-validation-for="Input.Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Description" class="form-label"></label>
+        <textarea asp-for="Input.Description" class="form-control"></textarea>
+        <span asp-validation-for="Input.Description" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Input.MuseumId" class="form-label"></label>
+        <select asp-for="Input.MuseumId" class="form-select" asp-items="Model.MuseumOptions">
+            <option value="">-- izaberi muzej --</option>
+        </select>
+        <span asp-validation-for="Input.MuseumId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Otkaži</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
